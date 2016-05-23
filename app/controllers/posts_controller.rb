@@ -1,12 +1,16 @@
 class PostsController < ApplicationController
 end
-def index
-end
-
-def new
-end
 
 def new 
-	@post = Poset.new
+	@post = Post.new
 end
+
+def destroy
+	@post = Post.find(params[:id])
+	@post.destroy
+	redirect_to posts_path
+end
+
+
+
 
